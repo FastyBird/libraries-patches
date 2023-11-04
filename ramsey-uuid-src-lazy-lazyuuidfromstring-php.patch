@@ -5,7 +5,7 @@
              ->fromString($this->uuid);
      }
 +
-+    public function __set_state(array $args): UuidInterface
++    public static function __set_state(array $args): UuidInterface
 +    {
 +        return (new UuidFactory())
 +            ->fromString($args['uuid']);
