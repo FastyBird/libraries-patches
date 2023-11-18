@@ -7,7 +7,7 @@
 -			return $func(...array_slice(func_get_args(), 1));
 +			if ($func === 'mkdir') {
 +				if (!is_dir(...array_slice(func_get_args(), 1, 1))) {
-+					return $func(...array_slice(func_get_args(), 1));
++					return @$func(...array_slice(func_get_args(), 1));
 +				}
 +				return true;
 +			} else {
